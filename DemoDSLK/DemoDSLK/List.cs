@@ -6,8 +6,27 @@ using System.Threading.Tasks;
 
 namespace DemoDSLK
 {
-    class List
+    class List<D>
     {
-
+        Element<D> head;
+        public List()
+        {
+            head = null;
+        }
+        public void addfirst(Element <D> e)
+        {
+            e.Next = head;
+            this.head = e;
+         }
+        public void printList()
+        {
+            Element<D> pointer = head;
+            while(pointer !=null)
+            {
+                Console.WriteLine(pointer.Data);
+                pointer = pointer.Next;
+            }
+        }
+            
     }
 }
